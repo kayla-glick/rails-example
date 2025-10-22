@@ -1,0 +1,24 @@
+# https://github.com/mperham/sidekiq/wiki/Problems-and-Troubleshooting
+:concurrency: 1
+development:
+  :concurrency: 2
+  :queues:
+    - critical
+    - default
+    - low
+    - giata
+    - less_than_five_seconds
+    - less_than_five_minutes
+    - less_than_five_hours
+staging:
+  :concurrency: 2
+  :queues:
+    - critical
+    - default
+    - low
+production:
+  :concurrency: 8
+  :queues:
+    - critical
+    - default
+    - low
