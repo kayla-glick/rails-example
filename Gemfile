@@ -43,6 +43,7 @@ gem "thruster", require: false
 gem "phlex-rails", "~> 1.2.2"
 gem "sidekiq", "~> 7.3.9"
 gem "wicked_pdf", "~> 2.8.2"
+gem "wkhtmltopdf-binary", group: [ :development, :test ]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -7,10 +7,10 @@ class Invoices::GeneratePdfJob
   def perform(invoice_id)
     invoice = Invoice.find(invoice_id)
 
-    pdf = PDF::TripItineraries::Create.call(itinerary: itinerary)
+    pdf = Invoices::CreatePdf.call(invoice:)
 
     invoice.pdf.attach(
-      io: StringIO.new(pdf.payload),
+      io: StringIO.new(pdf),
       filename: "invoice-#{invoice.id}.pdf"
     )
 

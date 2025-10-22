@@ -1,4 +1,4 @@
-class Invoices::PDF < ApplicationView
+class Invoices::Pdf < ApplicationView
   def initialize(invoice:)
     @invoice = invoice
   end
