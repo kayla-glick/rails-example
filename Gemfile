@@ -41,6 +41,8 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "phlex-rails", "~> 1.2.2"
+# Use Redis adapter to run Action Cable in production
+gem "redis", "~> 5.4"
 gem "sidekiq", "~> 7.3.9"
 gem "wicked_pdf", "~> 2.8.2"
 gem "wkhtmltopdf-binary", group: [ :development, :test ]
