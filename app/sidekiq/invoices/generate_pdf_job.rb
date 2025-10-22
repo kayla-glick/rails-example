@@ -1,4 +1,4 @@
-class GenerateInvoicePDFJob
+class Invoices::GeneratePdfJob
   include Sidekiq::Worker
   include RenderableRenderer
 

@@ -7,7 +7,7 @@ class InvoicesController < ApplicationController
 
   def create
     invoice = Invoice.create(status: :pending)
-    ::GenerateInvoicePDFJob.perform_async(invoice.id)
+    Invoices::GeneratePdfJob.perform_async(invoice.id)
 
     render turbo_stream: turbo_stream.replace(
       Invoices::Index::DOM_ID,
