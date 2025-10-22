@@ -7,9 +7,7 @@ class Invoices::Index < ApplicationView
 
   def view_template
     turbo_frame(id: DOM_ID) do
-      form_with(model: Invoice.new, url: invoices_path, method: :post) do |form|
-        form.submit "Create Invoice"
-      end
+      a(href: invoices_path, data: { turbo: "true", turbo_method: :post }) { "Create Invoice" }
     end
   end
 end
