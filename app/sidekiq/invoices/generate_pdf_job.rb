@@ -16,7 +16,7 @@ class Invoices::GeneratePdfJob
 
     invoice.success!
 
-    broadcast_replace_to(invoice)
+    broadcast_replace_to(invoice:)
   end
 
   private
@@ -24,8 +24,9 @@ class Invoices::GeneratePdfJob
   def broadcast_replace_to(invoice:)
     Turbo::StreamsChannel.broadcast_replace_to(
       invoice,
-      target: "modal",
-      html: html(invoice:)
+      target: Invoices::Index::DOM_ID,
+      html: html(invoice:),
+      layout: false
     )
   end
 
